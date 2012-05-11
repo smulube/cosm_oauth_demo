@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  "Hello Feed Viewer"
+  erb :index
 end
