@@ -32,6 +32,8 @@ before do
   # Set it's access rights if we have them in the session
   @client.access_token = session[:user_token]
   @client.user = session[:user]
+
+  logger.info("Client: #{@client.inspect}")
 end
 
 get '/' do
