@@ -218,6 +218,10 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+header, section, div#flash {
+  padding: 0 2%;
+  width: 96%;
+}
 
 
 

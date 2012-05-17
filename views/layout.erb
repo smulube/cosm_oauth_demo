@@ -28,7 +28,21 @@
   <script src="js/vendor/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-  <%= yield %>
+  <header>
+    <h1>Cosm Feed Viewer - Basic OAuth Example</h1>
+    <h2><%= @title %></h2>
+  </header>
+
+  <div role="main">
+    <%= styled_flash %>
+
+    <%= yield %>
+
+  </div>
+
+  <footer>
+
+  </footer>
 
   <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
 

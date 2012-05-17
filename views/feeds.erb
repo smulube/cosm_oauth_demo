@@ -1,0 +1,9 @@
+<% @title = 'Your Feeds' %>
+
+<% if @feeds %>
+  <ul>
+    <% @feeds["results"].each do |feed| %>
+      <li><a href="https://cosm.com/feeds/<%= feed["id"] %>"><%= feed["title"] %></a></li>
+    <% end %>
+  </ul>
+<% end %>
