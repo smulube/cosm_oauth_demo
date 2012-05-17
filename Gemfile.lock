@@ -1,7 +1,16 @@
+GIT
+  remote: git@github.com:smulube/cosm_oauth.git
+  revision: 192ed19895c5a21a1edeae3eca82678578d6984a
+  specs:
+    cosm_oauth (0.0.1.alpha.1)
+      addressable
+      oj
+
 GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.8)
+    backports (2.5.3)
     daemons (1.1.8)
     eventmachine (0.12.10)
     foreman (0.46.0)
@@ -15,9 +24,12 @@ GEM
       addressable (~> 2.2.6)
     mime-types (1.18)
     netrc (0.7.1)
+    oj (1.2.8)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
+    rack-test (0.6.1)
+      rack (>= 1.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rubyzip (0.9.8)
@@ -25,6 +37,15 @@ GEM
       rack (~> 1.3, >= 1.3.6)
       rack-protection (~> 1.2)
       tilt (~> 1.3, >= 1.3.3)
+    sinatra-contrib (1.3.1)
+      backports (>= 2.0)
+      eventmachine
+      rack-protection
+      rack-test
+      sinatra (~> 1.3.0)
+      tilt (~> 1.3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     thin (1.3.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -36,7 +57,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cosm_oauth!
   foreman
   heroku
+  oj
+  rest-client
   sinatra
+  sinatra-contrib
+  sinatra-flash
   thin
