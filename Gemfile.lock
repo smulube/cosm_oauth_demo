@@ -1,8 +1,8 @@
 GIT
   remote: git@github.com:smulube/cosm_oauth.git
-  revision: 192ed19895c5a21a1edeae3eca82678578d6984a
+  revision: 685a26b531662aa636be81945de73bb54f4d84a1
   specs:
-    cosm_oauth (0.0.1.alpha.1)
+    cosm_oauth (0.0.1.alpha.2)
       addressable
       oj
 
