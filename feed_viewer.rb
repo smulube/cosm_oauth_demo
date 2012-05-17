@@ -27,7 +27,7 @@ before do
   # Initialize client object (with client id, secret and redirect_uri)
   @client = Cosm::OAuth::Client.new(:client_id => ENV['CLIENT_ID'],
                                     :client_secret => ENV['CLIENT_SECRET'],
-                                    :redirect_uri => to("/oauth"))
+                                    :redirect_uri => to("/oauth/callback"))
 
   # Set it's access rights if we have them in the session
   @client.access_token = session[:user_token]
