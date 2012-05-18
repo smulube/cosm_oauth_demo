@@ -85,3 +85,9 @@ get '/oauth/callback' do
     end
   end
 end
+
+get '/oauth/logout' do
+  session.clear
+  flash[:notice] = "Logged out"
+  redirect "/"
+end
