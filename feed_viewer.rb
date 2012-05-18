@@ -36,18 +36,15 @@ before do
 end
 
 get '/' do
-  redirect("/feeds") if @client.authorized?
-  erb :index
-end
+  if @client.authorized?
+    response = @client.get("feeds.json", { :user => @client.user, :per_page => 1000, :content => "summary" })
 
-get '/feeds' do
-  redirect("/") unless @client.authorized?
+    @feeds = Oj.load(response)
 
-  response = @client.get("feeds.json", { :user => @client.user, :per_page => 1000, :content => "summary" })
-
-  @feeds = Oj.load(response)
-
-  erb :feeds
+    erb :feeds
+  else
+    erb :index
+  end
 end
 
 # Redirect to Cosm to authorize the app

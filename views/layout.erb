@@ -38,7 +38,7 @@
   </header>
 
   <div role="main" class="container">
-    <h4><%= @title %></h4>
+    <% if @title %><h4><%= @title %></h4><% end %>
 
     <%= styled_flash %>
 
