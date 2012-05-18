@@ -1,11 +1,13 @@
 <% @title = 'Your Feeds' %>
 
-<% if @feeds %>
+<% if @feeds["results"].size > 0 %>
   <ul>
     <% @feeds["results"].each do |feed| %>
       <li><a href="https://cosm.com/feeds/<%= feed["id"] %>"><%= feed["title"] %></a></li>
     <% end %>
   </ul>
+<% else %>
+  <p>You don't seem to have any feeds!</p>
 <% end %>
 
 <p><a href="/oauth/logout">Logout</a></p>

@@ -30,10 +30,16 @@
 <body>
   <header>
     <h1>Cosm Feed Viewer - Basic OAuth Example</h1>
-    <h2><%= @title %></h2>
+    <p>This demo can be found on Github at <a
+      href="https://github.com/smulube/cosm_oauth_demo">https://github.com/smulube/cosm_oauth_demo</a>,
+    and is a very simple example of a Ruby server app that uses the <a
+      href="https://github.com/smulube/cosm_oauth">cosm_oauth</a> gem to access
+    resources on <a href="https://cosm.com">Cosm</a> using OAuth.</p>
   </header>
 
   <div role="main" class="container">
+    <h4><%= @title %></h4>
+
     <%= styled_flash %>
 
     <%= yield %>
@@ -43,16 +49,5 @@
   <footer>
 
   </footer>
-
-  <!-- JavaScript at the bottom for fast page loading: http://developer.yahoo.com/performance/rules.html#js_bottom -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
-  <!-- end scripts -->
 </body>
 </html>
