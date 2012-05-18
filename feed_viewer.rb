@@ -43,7 +43,7 @@ end
 get '/feeds' do
   redirect("/") unless @client.authorized?
 
-  response = @client.get("feeds.json", { :user => :client.user, :per_page => 1000, :content => "summary" })
+  response = @client.get("feeds.json", { :user => @client.user, :per_page => 1000, :content => "summary" })
 
   @feeds = Oj.load(response)
 
