@@ -65,7 +65,12 @@ get '/oauth/callback' do
     # Extract temporary code
     code = request.params["code"]
 
+    logger.info("Fetching access token")
+
     @client.fetch_access_token(code)
+
+    logger.info("Access token: #{@client.access_token}")
+    logger.info("User: #{@client.user}")
 
     if @client.authorized?
       # Capture out our user id and access_token
