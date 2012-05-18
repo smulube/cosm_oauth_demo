@@ -30,7 +30,7 @@ before do
                                     :redirect_uri => to("/oauth/callback"))
 
   # Set it's access rights if we have them in the session
-  @client.access_token = session[:user_token]
+  @client.access_token = session[:access_token]
   @client.user = session[:user]
 
   logger.info("Client: #{@client.inspect}")
