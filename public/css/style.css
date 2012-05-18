@@ -231,6 +231,26 @@ div.container {
   padding: 0.4em 1em 1em;
 }
 
+nav {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  padding: 10px;
+  margin-left: -10px;
+  margin-right: 10px;
+  color: #555f66;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 
 
 
