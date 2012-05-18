@@ -218,9 +218,17 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
+body {
+  background-color: #eee;
+}
+
 header, div.container, footer {
-  padding: 0 2%;
-  width: 96%;
+  margin: 0 3em;
+}
+
+div.container {
+  background-color: #fff;
+  padding: 0.4em 1em 1em;
 }
 
 
