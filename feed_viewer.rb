@@ -28,16 +28,14 @@ before do
                                     :client_secret => ENV['CLIENT_SECRET'],
                                     :redirect_uri => to("/oauth/callback"))
 
-  # Set it's access rights if we have them in the session
+  # Set access rights if we have them in the session
   @client.access_token = session[:access_token]
   @client.user = session[:user]
-
-  logger.info("Client: #{@client.inspect}")
 end
 
 get '/' do
   if @client.authorized?
-    response = @client.get("feeds.json", { :user => @client.user, :per_page => 1000, :content => "summary" })
+    response = @client.get("/feeds", { :user => @client.user, :per_page => 1000, :content => "summary", :format => "json" })
 
     @feeds = Oj.load(response)
 
@@ -61,12 +59,7 @@ get '/oauth/callback' do
     # Extract temporary code
     code = request.params["code"]
 
-    logger.info("Fetching access token")
-
     @client.fetch_access_token(code)
-
-    logger.info("Access token: #{@client.access_token}")
-    logger.info("User: #{@client.user}")
 
     if @client.authorized?
       # Capture out our user id and access_token
