@@ -2,7 +2,6 @@ require 'rubygems'
 require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/flash'
-require 'rest_client'
 require 'oj'
 require 'cosm_oauth'
 
@@ -44,7 +43,7 @@ end
 get '/feeds' do
   redirect("/") unless @client.authorized?
 
-  response = RestClient.get("https://api.cosm.com/v2/feeds.json?user=#{@client.user}&per_page=1000&content=summary", { "X-ApiKey" => @client.access_token, "User-Agent" => "Cosm Oauth Test" })
+  response = @client.get("feeds.json", { :user => :client.user, :per_page => 1000, :content => "summary" })
 
   @feeds = Oj.load(response)
 
