@@ -54,7 +54,6 @@ end
 get '/oauth/callback' do
   if request.params["error"]
     flash[:error] = "User denied access"
-    redirect("/")
   else
     # Extract temporary code
     code = request.params["code"]
@@ -65,14 +64,11 @@ get '/oauth/callback' do
       # Capture out our user id and access_token
       session[:user] = @client.user
       session[:access_token] = @client.access_token
-
-      redirect("/feeds")
     else
       flash[:error] = "Unable to obtain access_token"
-
-      redirect("/")
     end
   end
+  redirect("/")
 end
 
 get '/oauth/logout' do
